@@ -1,0 +1,18 @@
+{
+    "name": "ztach/test",
+    "description": "testuje kompozera",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Staszek Olejnik",
+            "email": "ztach@poczta.onet.pl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ztach\\": "src/"
+        }
+    },
+    "require": {}
+}
