@@ -14,7 +14,7 @@ class Car extends AbstractVehicle {
     //     echo sprintf("\njedzie samochód: %s z szybkością: %d", $this->model, $this->speed->getValue()  );
     // }
 
-    protected function getName() : string
+    public function getName() : string
     {
         
         return 'SAMOCHÓD ' . $this->make . ' ' . $this->model;

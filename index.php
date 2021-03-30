@@ -49,5 +49,6 @@ $race->addVehicle(VehicleFactory::factory(VehicleFactory::TRUCK,'Volvo',new Spee
 
 $race->run();
 
+
  
 echo "\n\nMETA\n";

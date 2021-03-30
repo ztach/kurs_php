@@ -9,9 +9,9 @@ class Motor  extends AbstractVehicle
     //     echo sprintf("\njedzie motor: %s z szybkością: %d", $this->model, $this->speed->getValue()  );
     // }
 
-    protected function getName() : string
+    public function getName() : string
     {
-        return 'MOTOR';
+        return 'MOTOR ' . $this->make . ' ' . $this->model;
     }
 
 

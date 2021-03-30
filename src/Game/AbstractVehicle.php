@@ -25,10 +25,24 @@ abstract class AbstractVehicle implements Vehicle
         echo sprintf("\n zapiepsza {{$this->getName()}}: %s \n z prędkością %d %s\n i przemierzyłem dystans: %s kilosów\n", $this->model, $this->speed->getValue(),  $this->speed->getType(), $this->distance );
     }
 
-
     protected function distanceMove() : void {}
 
-    abstract protected function getName() : string;
+    abstract public function getName() : string;
 
+    public function getType() : string
+    {
+        return $this->make;
+    }
+
+    public function getMark() : string
+    {
+        return $this->mark;
+    }
+
+
+    public function getDistance(): float
+    {
+        return $this->distance;
+    }
 
 }

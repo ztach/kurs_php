@@ -28,6 +28,55 @@ class Race
             $this->displayTourInfo($tour);
             $this->tour($tour);
         }
+
+        $this->displayWinners();
+    }
+
+
+    private function displayWinners() : void
+    {
+        $winners = $this->getWinners();
+
+        sprintf('\nWINNERS');
+        foreach( $winners as $category => $winner)
+        {
+            echo sprintf("\nCategory %s (%s) - %d", $category, $winner->getName(),$winner->getDistance());
+        }
+    }
+
+    private function getWinners() : array
+    {
+        $winners = [];
+
+        foreach($this->vehicles as $vehicle )
+        {
+            
+            $category = $vehicle->gettype();
+            if($this->isWinner($winners,$vehicle))
+            {
+                $winners[$category] = $vehicle;
+            }
+
+        }
+  
+        return $winners;
+    }
+
+    private function isWinner($winners,$vehicle) : bool
+    {
+        $category = $vehicle->gettype();
+        if(!isset($winners[$category]))
+        {
+            return true;
+        } 
+        else 
+        {
+            if($vehicle->getDistance() > $winners[$category]->getDistance() )
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private function tour(int $tour) : void
@@ -42,15 +91,14 @@ class Race
 
     private function displayInfo() : void 
     {
-        echo "\n Distance: \t {$this->distance} ";
+        echo sprintf("\n Distance: \t %s :", $this->distance);
         echo sprintf("\n Vehicles: \t %s ", count($this->vehicles));
     }
 
     private function displayTourInfo( int $tour)
     {
-        echo "\n Tour {$tour} began: ";
-        echo "\n {$this->weather} \n";
+        echo sprintf("\n Tour %s began: ",$tour);
+        echo sprintf("\n Pogoda: %s \n",$this->weather);
     }
-
 
 }
