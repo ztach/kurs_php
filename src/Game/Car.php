@@ -20,6 +20,11 @@ class Car extends AbstractVehicle {
         return 'SAMOCHÓD ' . $this->make . ' ' . $this->model;
     }
 
+    protected function distanceMove() : void 
+    {
+        $this->distance += $this->speed->getValue() * rand(70,100)/100;
+    }
+
     public function drive() : void
     {
         echo "\nJadziem Panie Stachu\n";

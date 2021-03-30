@@ -20,13 +20,15 @@ abstract class AbstractVehicle implements Vehicle
 
     public function move() : void
     {
-        //$this->distanceMove();
-        $this->distance += $this->speed->getValue() * rand(70,100)/100; 
+        $this->distanceMove();
+         
         echo sprintf("\n zapiepsza {{$this->getName()}}: %s \n z prędkością %d %s\n i przemierzyłem dystans: %s kilosów\n", $this->model, $this->speed->getValue(),  $this->speed->getType(), $this->distance );
     }
 
+
+    protected function distanceMove() : void {}
+
     abstract protected function getName() : string;
 
-    //protected function distanceMove() : void
 
 }

@@ -15,4 +15,11 @@ class Motor  extends AbstractVehicle
     }
 
 
+    protected function distanceMove() : void 
+    {
+        $this->distance += $this->speed->getValue() * rand(50,120)/100;
+    }
+
+
+
 }

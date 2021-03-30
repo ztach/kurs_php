@@ -15,4 +15,10 @@ class Truck  extends AbstractVehicle
     }
 
 
+    protected function distanceMove() : void 
+    {
+        $this->distance += $this->speed->getValue() * rand(80,100)/100;
+    }
+
+
 }
